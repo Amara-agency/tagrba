@@ -1,0 +1,667 @@
+ /* إعدادات عامة للصفحة */
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ }
+
+ body {
+     background-color: #f5f5f5;
+     padding: 20px;
+ }
+
+ /* 
+
+شريط علوي
+
+*/
+
+ .navbar {
+     display: flex;
+     /* يجعل العناصر تترافق في صف واحد */
+     justify-content: space-between;
+     /* يوزع العناصر بالتساوي مع مسافة بينها */
+     align-items: center;
+     /* يمركز العناصر عمودياً */
+     background: linear-gradient(90deg, #2c3e50 0%, #3498db 100%);
+     /* لون خلفية داكن */
+     padding: 1rem 2rem;
+     /* هامش داخلي علوي/سفلي 1rem ويمين/يسار 2rem */
+     border-radius: 8px;
+     /* زوايا مدورة */
+     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+     /* إضافة ظل خفيف */
+ }
+
+
+ .logo {
+     display: flex;
+     /* يجعل العناصر داخل الحاوية تترافق في صف */
+     align-items: center;
+     /* يمركز العناصر عمودياً */
+ }
+
+ .logo-img {
+     margin-right: 50px;
+     /* بعد الصورة عن طرف الشريط */
+     width: 50px;
+     /* عرض الصورة */
+     height: 50px;
+     /* ارتفاع الصورة */
+     background-color: #3498db;
+     /* لون خلفية مؤقت للصورة */
+     border-radius: 50%;
+     /* يجعل الصورة دائرية */
+     display: flex;
+     /* يستخدم لتمركز المحتوى */
+     justify-content: center;
+     /* يمركز المحتوى أفقيًا */
+     align-items: center;
+     /* يمركز المحتوى عموديًا */
+     color: white;
+     /* لون النص */
+     font-weight: bold;
+     /* سمك الخط */
+     margin-left: 10px;
+     /* هامش أيسر لفصل الصورة عن النص */
+ }
+
+ .logo-text {
+     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+     color: white;
+     /* لون النص */
+     font-size: 1.5rem;
+     /* حجم الخط */
+     font-weight: bold;
+     /* سمك الخط */
+ }
+
+
+ .nav-links {
+     display: flex;
+     /* يجعل عناصر القائمة تترافق في صف */
+     list-style: none;
+     /* يزيل التعداد من عناصر القائمة */
+     gap: 50px;
+     /* مسافة بين الزرار */
+ }
+
+
+ .nav-links a {
+     margin-left: 50px;
+     /* بعد تواصل معنا عن اخرة الشريط */
+     overflow: hidden;
+     /* إخفاء أي محتوى يخرج خارج الحدود */
+     color: white;
+     /* لون النص */
+     font-weight: 500;
+     text-decoration: none;
+     /* يزيل التزيين من النص */
+     padding: 0.7rem 1.2rem;
+     /* هامش داخلي */
+     display: block;
+     /* يجعل الرابط يأخذ المساحة الكاملة */
+     /* مهم مشان يطلع لفوق وقت تحط الفارة عليه */
+     transition: all 0.3s ease;
+     /* إضافة تأثير انتقالي سلس */
+     border-radius: 4px;
+     /* زوايا مدورة */
+ }
+
+ .nav-links a i {
+     margin-left: 8px;
+     /* إضافة مسافة بين الأيقونة والنص */
+     width: 16px;
+     /* تحديد عرض ثابت للأيقونات */
+     text-align: center;
+     /* محاذاة الأيقونة في المنتصف */
+ }
+
+ .nav-links a:hover {
+     background-color: #3498db;
+     /* لون خلفية عند التمرير */
+     transform: translateY(-2px);
+     /* تحريك العنصر لأعلى قليلاً عند التمرير */
+ }
+
+
+ .menu-toggle {
+     display: none;
+     /* إخفاء زر القائمة بشكل افتراضي */
+     flex-direction: column;
+     /* ترتيب عناصر الزر في عمود */
+     justify-content: space-between;
+     /* توزيع المساحة بين العناصر */
+     width: 30px;
+     /* عرض الزر */
+     height: 21px;
+     /* ارتفاع الزر */
+     cursor: pointer;
+     /* تغيير شكل المؤشر إلى يد */
+ }
+
+ .menu-toggle span {
+     height: 3px;
+     /* ارتفاع خطوط الزر */
+     width: 100%;
+     /* عرض خطوط الزر */
+     background-color: white;
+     /* لون خطوط الزر */
+     border-radius: 3px;
+     /* زوايا مدورة للخطوط */
+     transition: all 0.3s ease;
+     /* إضافة تأثير انتقالي سلس */
+ }
+
+ /* 
+
+        لليحث
+
+*/
+ .search-container {
+     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+     /* تدرج لوني فاتح */
+     padding: 25px 20px;
+     /* مساحة داخلية */
+     border-radius: 12px;
+     /* زوايا مدورة */
+     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+     /* ظل ناعم */
+     margin: 20px auto;
+     /* هامش خارجي وتوسيط */
+     max-width: 800px;
+     /* أقصى عرض */
+ }
+
+ .search-title {
+     text-align: center;
+     /* محاذاة النص إلى المركز */
+     margin-bottom: 20px;
+     /* هامش سفلي */
+     color: #2c3e50;
+     /* لون النص */
+     font-size: 1.5rem;
+     /* حجم النص */
+     font-weight: bold;
+     /* سمك النص */
+ }
+
+ .search-options {
+     display: flex;
+     /* عرض العناصر في صف */
+     justify-content: center;
+     /* توسيط العناصر */
+     margin-bottom: 20px;
+     /* هامش سفلي */
+     flex-wrap: wrap;
+     /* السماح بلف العناصر على شاشات صغيرة */
+     gap: 10px;
+     /* مسافة بين العناصر */
+ }
+
+ .option-card {
+     background: white;
+     /* خلفية بيضاء */
+     border: 2px solid #e9ecef;
+     /* حدود رمادية فاتحة */
+     border-radius: 8px;
+     /* زوايا مدورة */
+     padding: 15px 20px;
+     /* مساحة داخلية */
+     cursor: pointer;
+     /* تغيير شكل المؤشر إلى يد */
+     transition: all 0.3s ease;
+     /* تأثير انتقالي سلس */
+     text-align: center;
+     /* محاذاة النص إلى المركز */
+     flex: 1;
+     /* توزيع المساحة بالتساوي */
+     min-width: 100px;
+     /* أقل عرض ممكن */
+ }
+
+ .option-card:hover {
+     transform: translateY(-3px);
+     /* تحريك العنصر لأعلى عند التمرير */
+     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+     /* إضافة ظل عند التمرير */
+ }
+
+ .option-card.active {
+     border-color: #3498db;
+     /* لون حدود أزرق عند التحديد */
+     background-color: #e8f4fd;
+     /* خلفية زرقاء فاتحة عند التحديد */
+ }
+
+ .option-card i {
+     font-size: 1.8rem;
+     /* حجم الأيقونة */
+     margin-bottom: 8px;
+     /* هامش سفلي للأيقونة */
+     display: block;
+     /* جعل الأيقونة كتلة لعرضها في سطر منفصل */
+ }
+
+ .option-link {
+     background: white;
+     border: 2px solid #e9ecef;
+     border-radius: 8px;
+     padding: 15px 20px;
+     cursor: pointer;
+     transition: all 0.3s ease;
+     text-align: center;
+     flex: 1;
+     min-width: 100px;
+     text-decoration: none;
+     /* إزالة التزيين من النص */
+     color: inherit;
+     /* استخدام لون العنصر الأب */
+     display: block;
+     /* لجعله يتصرف مثل div */
+ }
+
+
+ /* 
+ 
+
+ تنسيق عام للبطاقات 
+ 
+ 
+ */
+
+ .properties-container {
+     display: grid;
+     /* استخدام نظام grid لعرض البطاقات */
+     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+     /* إنشاء أعمدة متجاوبة */
+     gap: 25px;
+     /* المسافة بين البطاقات */
+     padding: 20px;
+     /* مساحة داخلية */
+     max-width: 1200px;
+     /* أقصى عرض */
+     margin: 0 auto;
+     /* توسيط الحاوية */
+ }
+
+ .property-card {
+     background: white;
+     /* خلفية بيضاء */
+     border-radius: 12px;
+     /* زوايا مدورة */
+     overflow: hidden;
+     /* إخفاء المحتوى الزائد */
+     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+     /* ظل ناعم */
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+     /* تأثيرات انتقالية */
+ }
+
+ .property-card:hover {
+     transform: translateY(-5px);
+     /* تحريك البطاقة لأعلى عند التمرير */
+     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+     /* زيادة الظل عند التمرير */
+ }
+
+ .property-image {
+     position: relative;
+ }
+
+ .property-image img {
+     width: 100%;
+     height: auto;
+     display: block;
+
+ }
+
+ .property-status {
+     position: absolute;
+     /* وضع مطلق */
+     top: 15px;
+     /* المسافة من الأعلى */
+     left: 15px;
+     /* المسافة من اليسار */
+     background: #e74c3c;
+     /* خلفية حمراء */
+     color: white;
+     /* لون النص أبيض */
+     padding: 5px 10px;
+     /* مساحة داخلية */
+     border-radius: 4px;
+     /* زوايا مدورة */
+     font-size: 0.8rem;
+     /* حجم النص */
+     font-weight: bold;
+     /* سمك النص */
+ }
+
+ .property-details {
+     padding: 20px;
+     /* مساحة داخلية */
+ }
+
+ .property-price {
+     font-size: 1.5rem;
+     /* حجم النص */
+     font-weight: bold;
+     /* سمك النص */
+     color: #2c3e50;
+     /* لون النص */
+     margin-bottom: 15px;
+     /* هامش سفلي */
+ }
+
+ .property-address {
+     font-size: 1.1rem;
+     /* حجم النص */
+     color: #34495e;
+     /* لون النص */
+     margin-bottom: 15px;
+     /* هامش سفلي */
+     line-height: 1.4;
+     /* ارتفاع السطر */
+ }
+
+ .property-features {
+     display: flex;
+     /* عرض العناصر في صف */
+     justify-content: space-between;
+     /* توزيع المساحة بين العناصر */
+     margin-bottom: 15px;
+     /* هامش سفلي */
+     border-bottom: 1px solid #ecf0f1;
+     /* خط فاصل */
+     padding-bottom: 15px;
+     /* مساحة سفلية */
+ }
+
+ .feature {
+     display: flex;
+     /* عرض العناصر في صف */
+     align-items: center;
+     /* تمركز عمودي */
+     gap: 8px;
+     /* مسافة بين العناصر */
+     color: #7f8c8d;
+     /* لون النص */
+ }
+
+ .feature i {
+     color: #3498db;
+     /* لون الأيقونة */
+ }
+
+
+
+ .property-btn {
+     display: block;
+     /* عرض كتلة */
+     width: 100%;
+     /* عرض كامل */
+     background: linear-gradient(90deg, #3498db 0%, #2c3e50 100%);
+     /* تدرج لوني */
+     color: white;
+     /* لون النص أبيض */
+     border: none;
+     /* إزالة الحدود */
+     padding: 12px;
+     /* مساحة داخلية */
+     border-radius: 6px;
+     /* زوايا مدورة */
+     font-size: 1rem;
+     /* حجم النص */
+     cursor: pointer;
+     /* تغيير شكل المؤشر إلى يد */
+     transition: all 0.3s ease;
+     /* تأثير انتقالي سلس */
+     text-align: center;
+     /* محاذاة النص إلى المركز */
+     text-decoration: none;
+     /* إزالة التزيين من النص */
+ }
+
+ .property-btn:hover {
+     transform: translateY(-2px);
+     /* تحريك الزر لأعلى عند التمرير */
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+     /* إضافة ظل عند التمرير */
+ }
+
+
+
+ /* تنسيقات Footer */
+ .footer {
+     background-color: #1a1a1a;
+     color: #fff;
+     padding: 40px 0 20px;
+     margin-top: 50px;
+     font-family: 'Cairo', sans-serif;
+ }
+
+ .footer-container {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-between;
+     max-width: 1200px;
+     margin: 0 auto;
+     padding: 0 20px;
+ }
+
+ .footer-section {
+     flex: 1;
+     min-width: 250px;
+     margin-bottom: 30px;
+     padding: 0 15px;
+ }
+
+ .footer-section h3 {
+     font-size: 1.5rem;
+     margin-bottom: 20px;
+     position: relative;
+     padding-bottom: 10px;
+ }
+
+ .footer-section h3::after {
+     content: '';
+     position: absolute;
+     bottom: 0;
+     right: 0;
+     width: 50px;
+     height: 2px;
+     background-color: #c8a97e;
+ }
+
+ .footer-section p {
+     line-height: 1.8;
+     margin-bottom: 20px;
+     color: #ccc;
+ }
+
+ .footer-section ul {
+     list-style: none;
+     padding: 0;
+ }
+
+ .footer-section ul li {
+     margin-bottom: 12px;
+ }
+
+ .footer-section ul li a {
+     color: #ccc;
+     text-decoration: none;
+     transition: color 0.3s;
+ }
+
+ .footer-section ul li a:hover {
+     color: #c8a97e;
+     padding-right: 5px;
+ }
+
+ .social-icons {
+     display: flex;
+     gap: 15px;
+     margin-top: 20px;
+ }
+
+ .social-icons a {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     width: 40px;
+     height: 40px;
+     background-color: #333;
+     border-radius: 50%;
+     color: #fff;
+     transition: all 0.3s;
+ }
+
+ .social-icons a:hover {
+     background-color: #c8a97e;
+     transform: translateY(-3px);
+ }
+
+ .contact-info p {
+     display: flex;
+     align-items: center;
+     margin-bottom: 15px;
+ }
+
+ .contact-info i {
+     margin-left: 10px;
+     color: #c8a97e;
+ }
+
+ .copyright {
+     text-align: center;
+     padding: 20px 0;
+     border-top: 1px solid #333;
+     margin-top: 30px;
+     color: #ccc;
+ }
+
+ .rwabet {
+     margin-left: -140px;
+ }
+
+ /* التنسيق للشاشات الصغيرة */
+ @media (max-width: 768px) {
+     .footer-container {
+         flex-direction: column;
+     }
+
+     .footer-section {
+         margin-bottom: 30px;
+     }
+ }
+
+
+ /*
+ 
+ التصميم المتجاوب للهواتف 
+ 
+ */
+
+ @media (max-width: 768px) {
+
+     /* للشريط العلوي */
+     .logo-img {
+         margin-right: 20px;
+     }
+
+     .menu-toggle {
+         display: flex;
+         /* إظهار زر القائمة على الشاشات الصغيرة */
+     }
+
+     .nav-links .contact {
+         margin-top: -2px;
+     }
+
+     .nav-links a {
+         margin-top: -34px;
+     }
+
+     .nav-links {
+         background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+         /* تدرج لوني للقائمة المنسدلة */
+         border-radius: 0 0 12px 12px;
+         /* زوايا مدورة للأسفل فقط */
+         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+         /* ظل للقائمة المنسدلة */
+         position: absolute;
+         /* تحديد موقع مطلق للقائمة */
+         left: 25px;
+         /* محاذاة لليسار */
+         top: 100px;
+         /* المسافة من الأعلى */
+         width: 50%;
+         /* عرض كامل */
+         flex-direction: column;
+         /* ترتيب العناصر في عمود */
+         align-items: center;
+         /* محاذاة العناصر إلى المركز */
+         padding: 1rem 0;
+         /* هامش داخلي */
+         clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+         /* إخفاء القائمة بشكل افتراضي */
+         transition: clip-path 0.4s ease-in-out;
+         /* تأثير انتقالي سلس */
+         z-index: 1000;
+         /* ضمان ظهور القائمة فوق المحتوى */
+     }
+
+     .menu-toggle.active span:nth-child(1) {
+         transform: translateY(10px) rotate(45deg);
+         /* تدوير وتحريك الشريط الأول ليشكل جزءًا من X */
+     }
+
+     .menu-toggle.active span:nth-child(2) {
+         opacity: 0;
+         /* إخفاء الشريط الثاني */
+     }
+
+     .menu-toggle.active span:nth-child(3) {
+         transform: translateY(-8px) rotate(-45deg);
+         /* تدوير وتحريك الشريط الثالث ليشكل جزءًا من X */
+     }
+
+     .nav-links.active {
+         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+         /* إظهار القائمة */
+     }
+
+     /* للبحث */
+     .search-options {
+         flex-direction: column;
+         /* عرض العناصر في عمود على الشاشات الصغيرة */
+     }
+
+     .search-form {
+         flex-direction: column;
+         /* عرض العناصر في عمود على الشاشات الصغيرة */
+     }
+
+     .search-input,
+     .search-btn {
+         width: 100%;
+         /* عرض كامل على الشاشات الصغيرة */
+     }
+
+
+     .properties-container {
+         grid-template-columns: 1fr;
+         /* عمود واحد على الشاشات الصغيرة */
+         padding: 15px;
+         /* تقليل المساحة الداخلية */
+     }
+
+     .property-features {
+         flex-wrap: wrap;
+         /* السماح بلف العناصر */
+         gap: 10px;
+         /* مسافة بين العناصر */
+     }
+ }

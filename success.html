@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تم إرسال البيانات بنجاح</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            padding: 40px 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .success-icon {
+            color: #4CAF50;
+            font-size: 80px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 28px;
+        }
+
+        p {
+            color: #7f8c8d;
+            margin-bottom: 25px;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .countdown {
+            font-size: 24px;
+            font-weight: bold;
+            color: #3498db;
+            margin: 20px 0;
+        }
+
+        .progress-bar {
+            height: 6px;
+            width: 100%;
+            background-color: #ecf0f1;
+            border-radius: 3px;
+            margin: 30px 0;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            width: 100%;
+            background-color: #2ecc71;
+            border-radius: 3px;
+            animation: progress 5s linear forwards;
+        }
+
+        @keyframes progress {
+            0% {
+                width: 100%;
+            }
+
+            100% {
+                width: 0%;
+            }
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="success-icon">✓</div>
+        <h1>تم إرسال بياناتك بنجاح!</h1>
+        <p>شكراً لك، لقد استلمنا معلوماتك وسيتم التواصل معك قريباً.</p>
+
+        <div class="countdown">سيتم تحويلك خلال <span id="timer">5</span> ثوانٍ</div>
+
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+
+        <button class="btn" id="redirectBtn">انتقال الآن</button>
+    </div>
+
+    <script>
+        // عناصر DOM
+        const timerElement = document.getElementById('timer');
+        const redirectBtn = document.getElementById('redirectBtn');
+
+        // الوقت المتبقي بالثواني
+        let timeLeft = 5;
+
+        // تحديث العداد كل ثانية
+        const countdown = setInterval(() => {
+            timeLeft--;
+            timerElement.textContent = timeLeft;
+
+            // عندما يصل المؤقت إلى الصفر
+            if (timeLeft <= 0) {
+                clearInterval(countdown);
+                redirectToPage();
+            }
+        }, 1000);
+
+        // وظيفة التحويل إلى الصفحة الأخرى
+        function redirectToPage() {
+            // هنا ضع رابط الصفحة التي تريد التوجيه إليها
+            window.location.href = "index.html";
+        }
+
+        // إمكانية التوجيه يدوياً بالضغط على الزر
+        redirectBtn.addEventListener('click', redirectToPage);
+    </script>
+</body>
+
+</html>
